@@ -27,6 +27,34 @@ Through a combination of prompt engineering, lightweight post-processing, and sy
 - **Zephyr-7B Beta**: Implements Distilled Direct Preference Optimization (dDPO) and fine-tuning for instruction following.
 
 ---
+## Experimental Results
+
+### Retrieval
+Evaluation metrics included **MRR@10**, **NDCG@10**, and **Hits@10**:
+- **BAAI/BGE-Reranker-base** outperformed other models with superior ranking precision and relevance.
+- **BM25**, while less modern, delivered strong results in keyword-dependent queries.
+
+| Model                 | Hits@10 | MAP@10 | MRR@10 | NDCG@10 |
+|-----------------------|---------|--------|--------|---------|
+| BGE-Reranker-base     | 0.6204  | 0.2149 | 0.4936 | 0.6614  |
+| all-mpnet-base-v2     | 0.4523  | 0.1169 | 0.2645 | 0.3833  |
+| BM25                  | 0.5060  | 0.1505 | 0.3293 | 0.2344  |
+| LLM-Embedder-ranker   | 0.5348  | 0.1408 | 0.3299 | 0.4690  |
+
+### Generation
+Key metrics: **Precision**, **F1 Score**, **ROUGE-1**, **ROUGE-L**, and **BLEU**:
+- **Starling-7B Alpha** provided the most precise and contextually relevant answers, making it ideal for short-answer tasks.
+- **Zephyr-7B Beta** performed well but exhibited biases in binary yes/no answers.
+- **LLaMA-2** and **Mistral-7B** showed limitations in generating concise responses.
+
+| Model          | Precision | Recall | F1 Score | ROUGE-1 | ROUGE-L | BLEU   |
+|----------------|-----------|--------|----------|---------|---------|--------|
+| LLaMA-2        | 0.4182    | 0.2267 | 0.2334   | 0.2358  | 0.2356  | 0.0554 |
+| Mistral-7B     | 0.4350    | 0.3220 | 0.3316   | 0.3349  | 0.3344  | 0.0731 |
+| Starling-7B    | 0.5783    | 0.5739 | 0.5739   | 0.5742  | 0.5740  | 0.1043 |
+| Zephyr-7B Beta | 0.4469    | 0.4170 | 0.4196   | 0.4245  | 0.4239  | 0.0529 |
+
+---
 
 ## Key Results
 
@@ -59,7 +87,8 @@ Evaluation metrics included **Precision**, **Recall**, **F1 Score**, **ROUGE-1**
 
 ### Visualization and Analysis
 - **`data_visualize.ipynb`**: Visualizations of performance metrics and experimental results.
-
+- **`MyRAGEval.ipynb`**: Visualizations of performance metrics of RAG stage.
+- **`MyRetEval.ipynb`**: Visualizations of performance metrics of Retrieval stage.
 ---
 
 ## Installation and Usage
@@ -85,9 +114,9 @@ Evaluation metrics included **Precision**, **Recall**, **F1 Score**, **ROUGE-1**
 
 ## Future Directions
 
-- Investigating RAG systems under constrained environments (e.g., low-memory GPUs).
-- Exploring bias mitigation techniques for binary QA tasks.
-- Extending RAG applications to real-world domains like legal or medical QA.
+- **Constraints**: Explore performance in low-memory environments and time-sensitive tasks.
+- **Bias Mitigation**: Address biases in binary responses.
+- **Domain-Specific QA**: Extend RAG applications to domains like legal or medical QA.
 
 ---
 
