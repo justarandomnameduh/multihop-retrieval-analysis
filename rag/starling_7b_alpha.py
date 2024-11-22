@@ -192,7 +192,7 @@ def initialise_and_run_model(save_name, input_stage_1, model_name, sample_size):
 
 if __name__ == '__main__':
   rerank = False
-  login(token="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", add_to_git_credential=True)
+  login(token="MY_TOKEN", add_to_git_credential=True)
 
   model_name = "berkeley-nest/Starling-LM-7B-alpha"
   input_stage_1 = "output/baai_llm_embedder_reranker.json"
