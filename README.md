@@ -93,6 +93,10 @@ Evaluation metrics included **Precision**, **Recall**, **F1 Score**, **ROUGE-1**
 
 ## Installation and Usage
 
+4. (Optional) To re-produce all the figures and tables from the report, run all the cells in:
+    - MyRetEval.ipynb
+    - MyRAGEval.ipynb
+    - data_visualize.ipynb
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/rag-system-experiments.git
@@ -102,13 +106,13 @@ Evaluation metrics included **Precision**, **Recall**, **F1 Score**, **ROUGE-1**
    pip install -r requirements.txt
    ```
 3. Run retrieval experiments:
-   ```bash
-   bash run_stage_1.sh
-   ```
-4. Evaluate generation models:
-   ```bash
-   python run_rag.sh
-   ```
+   - To run all the retrieval, execute: `bash run_stage_1.sh`
+      - or you can run each file separately: e.g. `python baai_llm_embedder_reranker.py`
+   - To evaluate a stage one's output (e.g. `output/baai_llm_embedder_reranker.json`): `python MyRetEval.py output/baai_llm_embedder_reranker.json`
+   - To run all the RAG, execute: `bash run_rag.sh`
+      - or you can run each file separately: e.g. `python llama2_7b_hf.py`
+   - (Optional) To re-produce all the figures and tables from the report, run all the cells in:
+      - `MyRetEval.ipynb`, `MyRAGEval.ipynb`, `data_visualize.ipynb`
 
 ---
 
