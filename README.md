@@ -1,4 +1,4 @@
-# README: Exploring Retrieval-Augmented Generation (RAG) Systems
+# Exploring Retrieval-Augmented Generation (RAG) Systems
 
 ## Overview
 
