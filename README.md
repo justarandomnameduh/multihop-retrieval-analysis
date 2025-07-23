@@ -8,7 +8,7 @@ The experiments focus on the two primary stages of RAG:
 1. **Retrieval Stage**: Identifying top-k relevant documents using various retrieval models.
 2. **Generation Stage**: Synthesizing accurate, concise answers using large language models (LLMs) with retrieved documents as context.
 
-Through a combination of prompt engineering, lightweight post-processing, and systematic analysis, this study highlights the nuanced interplay between retrieval and generation for factoid QA.
+Through a combination of prompt engineering, lightweight post-processing, and systematic analysis, this study highlights the interplay between retrieval and generation for RAG.
 
 ---
 
